@@ -22,12 +22,12 @@ DB_INFOS = {
         "host":"54.183.171.241",
         "port": 3306,
         "user": "root",
-        "password": "Viewfin2018"
+        "password": ""
     },
     "redshift": {
         "host": "viewfin.cw9jfoph5mfr.us-west-1.redshift.amazonaws.com",
         "port": 5439,
         "user": "root",
-        "password": "Viewfin2018!"
+        "password": ""
     }
 }
