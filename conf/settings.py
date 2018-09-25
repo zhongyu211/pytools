@@ -18,10 +18,11 @@ DB_INFOS = {
         "password": None
     },
     "mysql": {
-        "host": "172.32.0.143",
+        #"host": "172.32.0.143",
+        "host":"54.183.171.241",
         "port": 3306,
         "user": "root",
-        "password": "Viewfin2018@"
+        "password": "Viewfin2018"
     },
     "redshift": {
         "host": "viewfin.cw9jfoph5mfr.us-west-1.redshift.amazonaws.com",

@@ -42,7 +42,7 @@ class GlobalLogging:
     def __init__(self):
         self.logger = None
         self.handler = None
-        self.level = log_level_map["LOG_LEVEL"]
+        self.level = log_level_map[LOG_LEVEL]
         self.logger = logging.getLogger("GlobalLogging")
         self.formatter = logging.Formatter(
             "%(asctime)s - %(levelname)s - %(message)s")
