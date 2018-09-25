@@ -3,5 +3,5 @@ import os
 import sys
 
 from logger.mplog import log
-
-log.info("this is test ")
+for i in xrange(1,1000000):
+    log.info("this is test")
