@@ -7,6 +7,7 @@ import sys
 
 #log configuration
 LOG_FILE_NAME = 'merge.log'
+LOG_LEVEL = "INFO"
 
 #db configuration
 DB_INFOS = {
