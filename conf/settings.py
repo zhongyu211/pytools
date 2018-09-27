@@ -15,7 +15,7 @@ DB_INFOS = {
         "host": "ip-172-32-0-159.us-west-1.compute.internal",
         "port": 21050,
         "user": 'admin',
-        "password": None
+        "password": "Viewfin2018@"
     },
     "mysql": {
         #"host": "172.32.0.143",
