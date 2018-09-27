@@ -6,7 +6,7 @@ from impala.dbapi import connect as impala_connect
 import traceback
 
 class ImpalaConnect(object):
-    def __init__ (self,  sql_content, host=None, port=21050, user=None, password=None, timeout= 5):
+    def __init__ (self,  sql_content, host=None, port=None, user=None, password=None, timeout= 5):
         self.sql_content = sql_content
         self.host = host if host else DB_INFOS["impala"]["host"]
         self.port = host if port else DB_INFOS["impala"]["port"]
@@ -18,7 +18,7 @@ class ImpalaConnect(object):
     def init_conn(self):
         try:
             conn = impala_connect(host=self.host, port=self.port, user=self.user, password=self.password,
-                          connect_timeout=self.timeout, database="")
+                          timeout=self.timeout)
             return conn
         except Exception as ex:
             log.error(traceback.format_exc())
@@ -42,6 +42,7 @@ class ImpalaConnect(object):
     def query(self):
         try:
             if self.conn:
+                print self.sql_content
                 cursor =self.conn.cursor()
                 cursor.execute(self.sql_content)
                 result = cursor.fetchall()
@@ -55,4 +56,6 @@ class ImpalaConnect(object):
 
 
 if __name__ == "__main__":
-    pass
+    sql = "select count(*) from ods_rightbtc.user_register;"
+    conn = ImpalaConnect(sql)
+    print conn.query()
