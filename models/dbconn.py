@@ -16,7 +16,7 @@ import MySQLdb
 import traceback
 
 class MysqlConnect(object):
-    def __init__ (self,  sql_content, host=None, port=None, user=None, password=None, timeout= 2):
+    def __init__ (self,  sql_content, host=None, port=None, user=None, password=None, timeout= 5):
         self.sql_content = sql_content
         self.host = host if host else DB_INFOS["mysql"]["host"]
         self.port = host if port else DB_INFOS["mysql"]["port"]
@@ -34,8 +34,6 @@ class MysqlConnect(object):
             log.error(traceback.format_exc())
             log.error(ex.args)
             return None
-
-
 
     def excute(self):
 
@@ -64,6 +62,7 @@ class MysqlConnect(object):
         except Exception as ex:
             log.error(traceback.format_exc())
             log.error(ex.args)
+
 
 
 if __name__ == "__main__":

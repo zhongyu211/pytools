@@ -28,7 +28,6 @@ class NullHandler(logging.Handler):
     def emit(self, record):
         pass
 
-
 class GlobalLogging:
     log = None
 
@@ -45,7 +44,7 @@ class GlobalLogging:
         self.level = log_level_map[LOG_LEVEL]
         self.logger = logging.getLogger("GlobalLogging")
         self.formatter = logging.Formatter(
-            "%(asctime)s - %(levelname)s - %(message)s")
+            "%(asctime)s-%(levelname)s(%(name)s-%(lineno)d)%(message)s")
 
         self.logger.setLevel(self.level)
 
@@ -84,7 +83,6 @@ class GlobalLogging:
             self.handler('-DEBUG-:' + s)
 
     def info(self, s):
-
         self.logger.info(s)
         # print self.handler,self.level
         if not self.handler == None and self.level <= logging.INFO:
