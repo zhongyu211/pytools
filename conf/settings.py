@@ -12,11 +12,9 @@ LOG_LEVEL = "INFO"
 #db configuration
 DB_INFOS = {
     "impala": {
-        #"host": "ip-172-32-0-159.us-west-1.compute.internal",
-        "host": "54.219.115.152",
+        "host": "ip-172-32-0-159.us-west-1.compute.internal",
+        #"host": "54.219.115.152",
         "port": 21050,
-        "user": 'admin',
-        "password": "Viewfin2018@"
     },
     "mysql": {
         #"host": "172.32.0.143",

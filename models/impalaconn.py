@@ -10,8 +10,8 @@ class ImpalaConnect(object):
         self.sql_content = sql_content
         self.host = host if host else DB_INFOS["impala"]["host"]
         self.port = host if port else DB_INFOS["impala"]["port"]
-        self.user = user if user else DB_INFOS["impala"]["user"]
-        self.password = password if password else DB_INFOS["impala"]["password"]
+        self.user = user if user else DB_INFOS["impala"].get("user")
+        self.password = password if password else DB_INFOS["impala"].get("password")
         self.timeout = timeout
         self.conn = self.init_conn()
 

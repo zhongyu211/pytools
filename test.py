@@ -1,8 +1,7 @@
 __author__ = "allenz"
 import os
 import sys
-
-from logger.mplog import log
-for i in xrange(1,10):
-    log.info("this is test")
-import confluent_kafka as ck
+from models.impalaconn import ImpalaConnect
+sql = "select count(*) from ods_rightbtc.user_register;"
+conn = ImpalaConnect(sql)
+print conn.query()
